@@ -43,11 +43,13 @@ export default {
   font-size: 1.5rem;
   max-width: 1024px;
   position: relative;
+  text-align: center;
 }
 
 @media screen and (min-width: 1024px) {
   .content {
     font-size: 3rem;
+    text-align: left;
     text-shadow: 0 0 10px rgba(#000, 0.95);
   }
 }

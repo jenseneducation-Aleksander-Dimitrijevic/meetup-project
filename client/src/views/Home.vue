@@ -2,6 +2,7 @@
   <div>
     <app-header :imgUrl="require('@/assets/bg-image-main.jpg')">
       <h1>Welcome to the meetup!</h1>
+      <button>Start right here</button>
     </app-header>
   </div>
 </template>
@@ -17,4 +18,23 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+h1 {
+  margin-bottom: 1rem;
+}
+button {
+  width: 200px;
+  border: none;
+  color: #fff;
+  font-size: 17px;
+  cursor: pointer;
+  padding: 18px 15px;
+  border-radius: 5px;
+  background: #d50000;
+}
+
+@media screen and (min-width: 1024px) {
+  h1 {
+    margin-bottom: 0;
+  }
+}
 </style>
