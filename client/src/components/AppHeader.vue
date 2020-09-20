@@ -1,5 +1,5 @@
 <template>
-  <header class="container" :style="{backgroundImage: `url(${imgUrl})`}">
+  <header class="container" :style="{ backgroundImage: `url(${imgUrl})` }">
     <div class="content">
       <slot />
     </div>
@@ -32,15 +32,18 @@ export default {
     width: 100%;
     height: 100%;
     position: absolute;
-    background: rgba(#000, 0.55);
+    background: rgba(#000, 0.45);
   }
 }
 
 @media screen and (min-width: 1024px) {
+  .container {
+    clip-path: polygon(0 0, 100% 0%, 100% 85%, 0 95%);
+  }
   .content {
     font-size: 3rem;
     text-align: left;
-    text-shadow: 0 0 10px rgba(#000, 0.95);
+    text-shadow: 0 0 10px rgba(#000, 0.55);
   }
 }
 </style>

@@ -28,13 +28,21 @@ button {
   font-size: 17px;
   cursor: pointer;
   padding: 18px 15px;
-  border-radius: 5px;
+  border-radius: 3px;
   background: #d50000;
+  border: 3px solid #d50000;
 }
 
 @media screen and (min-width: 1024px) {
   h1 {
     margin-bottom: 0;
+  }
+
+  button {
+    transition: 0.2s;
+    &:hover {
+      background: none;
+    }
   }
 }
 </style>
