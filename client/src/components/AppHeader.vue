@@ -36,6 +36,10 @@ export default {
   }
 }
 
+.content {
+  color: #fff;
+}
+
 @media screen and (min-width: 1024px) {
   .container {
     clip-path: polygon(0 0, 100% 0%, 100% 85%, 0 95%);

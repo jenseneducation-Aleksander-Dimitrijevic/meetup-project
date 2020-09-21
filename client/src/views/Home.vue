@@ -4,15 +4,18 @@
       <h1>Welcome to the meetup!</h1>
       <button>Start right here</button>
     </app-header>
+    <Events />
   </div>
 </template>
 
 <script>
 import AppHeader from "@/components/AppHeader.vue";
+import Events from "@/components/Events.vue";
 export default {
   name: "Home",
   components: {
     AppHeader,
+    Events,
   },
 };
 </script>
