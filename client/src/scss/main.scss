@@ -1,0 +1,16 @@
+@import "reset";
+@import "fonts";
+
+body {
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+.content {
+  width: 100%;
+  margin: auto;
+  padding: 0 1rem;
+  font-size: 1.5rem;
+  max-width: 1024px;
+  position: relative;
+  text-align: center;
+}
