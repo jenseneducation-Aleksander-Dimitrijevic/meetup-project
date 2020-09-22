@@ -4,13 +4,15 @@
   "description": "Backend for meetup application",
   "main": "app.js",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "faker": "^5.1.0",
+    "json-server": "^0.16.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.4"
   },
   "scripts": {
-    "dev": "nodemon app.js",
+    "dev": "json-server --watch -p 5000 ./data/events.js",
     "start": "node app.js"
   },
   "author": "Aleksander Dimitrijevic",

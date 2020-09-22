@@ -1,8 +1,8 @@
 <template>
   <div>
     <app-header :imgUrl="require('@/assets/bg-image-main.jpg')">
-      <h1>Welcome to the meetup!</h1>
-      <button>Start right here</button>
+      <h1>Welcome to the meetup.</h1>
+      <button>Join today!</button>
     </app-header>
     <Events />
   </div>
@@ -33,7 +33,6 @@ button {
   padding: 18px 15px;
   border-radius: 3px;
   background: #d50000;
-  border: 3px solid #d50000;
 }
 
 @media screen and (min-width: 1024px) {
@@ -42,9 +41,8 @@ button {
   }
 
   button {
-    transition: 0.2s;
     &:hover {
-      background: none;
+      background: darken(#d50000, 10%);
     }
   }
 }
