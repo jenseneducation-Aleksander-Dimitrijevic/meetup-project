@@ -23,4 +23,4 @@ function generateEvents() {
   return { events };
 }
 
-module.exports = generateEvents;
+module.exports = { generateEvents };

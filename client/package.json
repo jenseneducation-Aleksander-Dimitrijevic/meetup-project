@@ -4,15 +4,12 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "json-server": "json-server --watch ./../api/data/events.js",
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
-    "lint": "vue-cli-service lint",
-    "all": "concurrently \"npm run serve\" \"npm run json-server\" "
+    "lint": "vue-cli-service lint"
   },
   "dependencies": {
     "axios": "^0.20.0",
-    "concurrently": "^5.3.0",
     "core-js": "^3.6.5",
     "vue": "^2.6.11",
     "vue-moment": "^4.1.0",

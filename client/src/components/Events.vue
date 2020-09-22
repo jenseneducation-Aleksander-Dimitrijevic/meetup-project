@@ -2,7 +2,11 @@
   <article class="content">
     <h1>Events in Stockholm</h1>
     <div class="grid">
-      <section class="event-item" v-for="event in events" :key="event.id">
+      <section
+        class="event-item"
+        v-for="event in events.events"
+        :key="event.id"
+      >
         <img :src="event.imgUrl" alt="event image" />
         <section class="event-content">
           <h2 class="date">
@@ -31,7 +35,7 @@ export default {
     };
   },
   async created() {
-    const RESPONSE = await axios.get("http://api:5000/events");
+    const RESPONSE = await axios.get("http://localhost:5000/events");
     this.events = RESPONSE.data;
   },
 };
