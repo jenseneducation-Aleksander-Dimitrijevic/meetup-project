@@ -12,7 +12,8 @@
           <p class="title">{{ event.eventTitle }}</p>
           <p class="description">{{ event.eventDescription }}</p>
           <p class="attendees">
-            <span class="lnr lnr-users"></span> {{ event.attendees }}
+            <span class="lnr lnr-users"></span>
+            {{ event.attendees }}
           </p>
         </section>
       </section>

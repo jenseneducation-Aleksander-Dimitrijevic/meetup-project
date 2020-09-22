@@ -12,7 +12,7 @@
     "nodemon": "^2.0.4"
   },
   "scripts": {
-    "dev": "json-server --watch -p 5000 ./data/events.js",
+    "dev": "nodemon app.js",
     "start": "node app.js"
   },
   "author": "Aleksander Dimitrijevic",
