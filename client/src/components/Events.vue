@@ -35,7 +35,9 @@ export default {
     };
   },
   async created() {
-    const RESPONSE = await axios.get("http://localhost:5000/events");
+    const RESPONSE = await axios.get(
+      "https://meetup-project.herokuapp.com/events"
+    );
     this.events = RESPONSE.data;
   },
 };
