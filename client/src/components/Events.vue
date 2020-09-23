@@ -2,11 +2,7 @@
   <article class="content">
     <h1>Events in Stockholm</h1>
     <div class="grid">
-      <section
-        class="event-item"
-        v-for="event in events.events"
-        :key="event.id"
-      >
+      <section class="event-item" v-for="event in events.events" :key="event.id">
         <img :src="event.imgUrl" alt="event image" />
         <section class="event-content">
           <h2 class="date">
@@ -35,9 +31,7 @@ export default {
     };
   },
   async created() {
-    const RESPONSE = await axios.get(
-      "https://meetup-project.herokuapp.com/events"
-    );
+    const RESPONSE = await axios.get("//localhost:5000/events");
     this.events = RESPONSE.data;
   },
 };
@@ -46,7 +40,7 @@ export default {
 <style lang="scss" scoped>
 .content {
   text-align: left;
-  margin: 4rem auto;
+  margin: 4rem auto 8rem auto;
 
   .grid {
     gap: 2rem 0;
