@@ -1,6 +1,9 @@
 <template>
   <div class="footer">
-    <p>&copy;{{new Date().getFullYear()}} | Created by | Aleksander Dimitrijevic</p>
+    <p>
+      &copy;{{ new Date().getFullYear() }} | Created by | Aleksander
+      Dimitrijevic
+    </p>
   </div>
 </template>
 
@@ -18,7 +21,7 @@ export default {
   text-align: center;
   padding: 5rem 1rem;
   align-items: center;
-  background: #455a64;
+  background: #263238;
   justify-content: center;
 }
 </style>

@@ -1,8 +1,8 @@
 <template>
   <div
     class="back-drop"
-    :class="{show : $route.name === 'event'}"
-    @click="$router.push({name: 'Home'})"
+    :class="{ show: this.$store.state.isBackdropOpen }"
+    @click="$store.commit('DISABLE_BACKDROP')"
   ></div>
 </template>
 
@@ -23,7 +23,7 @@ export default {
     cursor: pointer;
     position: fixed;
     transition: 0.3s;
-    background: rgba(#000, 0.5);
+    background: rgba(#000, 0.9);
   }
 }
 </style>

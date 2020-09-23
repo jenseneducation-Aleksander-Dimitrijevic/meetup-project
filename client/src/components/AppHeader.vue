@@ -32,7 +32,7 @@ export default {
     width: 100%;
     height: 100%;
     position: absolute;
-    background: rgba(#000, 0.45);
+    background: rgba(#000, 0.55);
   }
 }
 

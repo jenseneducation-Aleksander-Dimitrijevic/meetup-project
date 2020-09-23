@@ -6,7 +6,7 @@
         class="event-item"
         v-for="event in events.events"
         :key="event.id"
-        @click="$router.push({name: 'event', params: { id: event.id, event }})"
+        @click="showEvent(event)"
       >
         <img :src="event.imgUrl" alt="event image" />
         <section class="event-content">
@@ -38,6 +38,12 @@ export default {
   async created() {
     const RESPONSE = await axios.get("//localhost:5000/events");
     this.events = RESPONSE.data;
+  },
+  methods: {
+    showEvent(event) {
+      this.$store.commit("TOGGLE_BACKDROP");
+      this.$router.push({ name: "event", params: { id: event.id, event } });
+    },
   },
 };
 </script>
