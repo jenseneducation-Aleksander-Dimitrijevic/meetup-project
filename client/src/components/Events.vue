@@ -2,7 +2,12 @@
   <article class="content">
     <h1>Events in Stockholm</h1>
     <div class="grid">
-      <section class="event-item" v-for="event in events.events" :key="event.id">
+      <section
+        class="event-item"
+        v-for="event in events.events"
+        :key="event.id"
+        @click="$router.push({name: 'event', params: { id: event.id, event }})"
+      >
         <img :src="event.imgUrl" alt="event image" />
         <section class="event-content">
           <h2 class="date">
@@ -48,6 +53,7 @@ export default {
     margin: 4rem 0;
 
     .event-item {
+      cursor: pointer;
       border-radius: 5px;
       border: 1px solid #ccc;
 
@@ -97,6 +103,13 @@ export default {
     .grid {
       gap: 2rem;
       grid-template-columns: repeat(3, 1fr);
+
+      .event-item {
+        transition: 0.3s;
+        &:hover {
+          box-shadow: 0 0 25px rgba(#000, 0.2);
+        }
+      }
     }
   }
 }

@@ -9,6 +9,14 @@ const routes = [
     path: "/",
     name: "Home",
     component: Home,
+    children: [
+      {
+        path: "/event/:id",
+        name: "event",
+        props: true,
+        component: () => import("@/views/Event.vue"),
+      },
+    ],
   },
 ];
 
