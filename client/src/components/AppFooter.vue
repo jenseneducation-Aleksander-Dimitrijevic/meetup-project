@@ -15,6 +15,7 @@ export default {
   width: 100%;
   color: #fff;
   display: flex;
+  text-align: center;
   padding: 5rem 1rem;
   align-items: center;
   background: #455a64;

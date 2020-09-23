@@ -7,7 +7,7 @@ function generateEvents() {
     let eventTitle = faker.lorem.sentence();
     let eventDate = faker.date.soon();
     let eventDescription = faker.lorem.lines();
-    let attendees = faker.random.number(20);
+    let attendees = faker.random.number(100);
     let imgUrl = faker.random.image();
 
     events.push({

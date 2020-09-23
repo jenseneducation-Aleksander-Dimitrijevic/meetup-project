@@ -6,8 +6,13 @@ jest.mock("axios", () => ({
 }));
 
 describe("Events.vue", () => {
+  let wrapper;
+
+  beforeEach(() => {
+    wrapper = shallowMount(Events);
+  });
+
   it("mocking the axios call to get the first event in the response", () => {
-    var wrapper = shallowMount(Events);
     wrapper.vm.$nextTick(() => {
       expect(wrapper.vm.events.length).toBe(1);
     });

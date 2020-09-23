@@ -55,7 +55,7 @@ export default {
     .event-item {
       cursor: pointer;
       border-radius: 5px;
-      border: 1px solid #ccc;
+      border: 1px solid #eee;
 
       img {
         width: 100%;
