@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Spinner />
     <Backdrop />
     <login-form />
     <app-navbar />
@@ -13,6 +14,7 @@ import Backdrop from "@/components/Backdrop.vue";
 import AppFooter from "@/components/AppFooter.vue";
 import AppNavbar from "@/components/AppNavbar.vue";
 import LoginForm from "@/components/LoginForm.vue";
+import Spinner from "@/components/Spinner.vue";
 export default {
   name: "App",
   components: {
@@ -20,6 +22,7 @@ export default {
     Backdrop,
     AppNavbar,
     LoginForm,
+    Spinner,
   },
 };
 </script>

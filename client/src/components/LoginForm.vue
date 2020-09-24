@@ -33,11 +33,14 @@ export default {
         this.error = "Form field(s) empty";
         return;
       }
+
+      this.$store.commit("SET_LOADING");
       localStorage.setItem("user", JSON.stringify(this.input.email));
       this.input = "";
       this.$store.commit("TOGGLE_LOGIN_FORM");
       setTimeout(() => {
         location.reload();
+        this.$store.commit("SET_LOADING");
       }, 2000);
     },
   },

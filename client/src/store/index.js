@@ -6,6 +6,7 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
+    isLoading: false,
     isBackdropOpen: false,
     isLoginFormOpen: false,
   },
@@ -19,6 +20,9 @@ export default new Vuex.Store({
     },
     TOGGLE_LOGIN_FORM(state) {
       state.isLoginFormOpen = !state.isLoginFormOpen;
+    },
+    SET_LOADING(state) {
+      state.isLoading = !state.isLoading;
     },
   },
   actions: {},
