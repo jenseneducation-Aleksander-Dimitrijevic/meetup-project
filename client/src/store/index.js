@@ -7,6 +7,7 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     isBackdropOpen: false,
+    isLoginFormOpen: false,
   },
   mutations: {
     TOGGLE_BACKDROP(state) {
@@ -15,6 +16,9 @@ export default new Vuex.Store({
     DISABLE_BACKDROP(state) {
       state.isBackdropOpen = false;
       router.push({ name: "Home" });
+    },
+    TOGGLE_LOGIN_FORM(state) {
+      state.isLoginFormOpen = !state.isLoginFormOpen;
     },
   },
   actions: {},

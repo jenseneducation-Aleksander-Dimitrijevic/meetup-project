@@ -23,7 +23,7 @@ export default {
     cursor: pointer;
     position: fixed;
     transition: 0.3s;
-    background: rgba(#000, 0.9);
+    background: rgba(#000, 0.7);
   }
 }
 </style>

@@ -44,6 +44,7 @@ button {
   }
 
   button {
+    transition: 0.3s;
     &:hover {
       background: darken(#d50000, 10%);
     }
