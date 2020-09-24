@@ -1,8 +1,6 @@
 <template>
   <form :class="{ show: this.$store.state.isLoginFormOpen }">
-    <span class="close-btn" @click="$store.commit('TOGGLE_LOGIN_FORM')"
-      >&times;</span
-    >
+    <span class="close-btn" @click="$store.commit('TOGGLE_LOGIN_FORM')">&times;</span>
     <h1>Login below</h1>
     <input type="text" placeholder="E-mail" />
     <input type="password" placeholder="Password" />

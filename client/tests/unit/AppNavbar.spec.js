@@ -6,7 +6,7 @@ const localVue = createLocalVue();
 localVue.use(Vuex);
 
 const mutations = {
-  testMutation: jest.fn(),
+  TOGGLE_LOGIN_FORM: jest.fn(),
 };
 
 const store = new Vuex.Store({ mutations });
@@ -27,7 +27,7 @@ describe("AppNavbar.vue", () => {
   it("should commit to a mutation and send a payload", async () => {
     const loginButton = wrapper.find(".btn-login");
     await loginButton.trigger("click");
-    expect(mutations.testMutation).toHaveBeenCalledWith(
+    expect(mutations.TOGGLE_LOGIN_FORM).toHaveBeenCalledWith(
       {},
       { msg: "Mutation payload" }
     );

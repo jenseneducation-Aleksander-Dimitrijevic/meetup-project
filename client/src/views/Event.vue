@@ -5,10 +5,7 @@
       <img :src="event.imgUrl" alt="event image" />
     </section>
     <section>
-      <span
-        class="lnr lnr-arrow-left btn-back"
-        @click="$store.commit('DISABLE_BACKDROP')"
-      ></span>
+      <span class="lnr lnr-arrow-left btn-back" @click="$store.commit('DISABLE_BACKDROP')"></span>
       <h1 class="date">
         <span class="lnr lnr-calendar-full"></span>
         -
@@ -24,9 +21,7 @@
       <form>
         <h2>Omdöme</h2>
         <input type="text" placeholder="Title" />
-        <textarea
-          placeholder="What did you like/dislike about this event?"
-        ></textarea>
+        <textarea placeholder="What did you like/dislike about this event?"></textarea>
         <button>Send</button>
       </form>
     </section>
@@ -46,7 +41,7 @@ export default {
 .event-container {
   top: 50%;
   left: 50%;
-  z-index: 2;
+  z-index: 4;
   width: 95%;
   height: 95%;
   position: fixed;
@@ -122,7 +117,7 @@ export default {
 @media screen and (min-width: 1024px) {
   .event-container {
     width: 80%;
-    height: 60%;
+    height: 80%;
     &.flex {
       display: flex;
       img {
