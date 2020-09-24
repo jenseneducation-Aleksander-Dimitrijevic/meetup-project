@@ -23,4 +23,10 @@ export default new Vuex.Store({
   },
   actions: {},
   modules: {},
+  getters: {
+    loggedIn() {
+      const isLoggedIn = JSON.parse(localStorage.getItem("user"));
+      return !!isLoggedIn;
+    },
+  },
 });

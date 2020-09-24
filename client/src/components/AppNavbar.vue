@@ -1,8 +1,16 @@
 <template>
   <nav class="app-bar">
-    <button class="btn-login" @click="loginUser">
+    <button
+      v-if="!$store.getters.loggedIn"
+      class="btn-user-actions"
+      @click="loginUser"
+    >
       <span class="lnr lnr-user"></span> Login
     </button>
+    <button v-else class="btn-user-actions" @click="logout">
+      Logout
+    </button>
+    <button v-show="$store.getters.loggedIn">Create new event</button>
   </nav>
 </template>
 
@@ -12,6 +20,10 @@ export default {
   methods: {
     loginUser() {
       this.$store.commit("TOGGLE_LOGIN_FORM");
+    },
+    logout() {
+      localStorage.removeItem("user");
+      location.reload();
     },
   },
 };
@@ -30,7 +42,7 @@ export default {
   position: absolute;
   align-items: center;
 
-  .btn-login {
+  .btn-user-actions {
     border: none;
     color: #fff;
     transition: 0.3s;
@@ -50,7 +62,7 @@ export default {
   .app-bar {
     height: 80px;
     padding: 0 2rem;
-    .btn-login {
+    .btn-user-actions {
       &:hover {
         opacity: 0.8;
         span {

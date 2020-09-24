@@ -5,7 +5,10 @@
       <img :src="event.imgUrl" alt="event image" />
     </section>
     <section>
-      <span class="lnr lnr-arrow-left btn-back" @click="$store.commit('DISABLE_BACKDROP')"></span>
+      <span
+        class="lnr lnr-arrow-left btn-back"
+        @click="$store.commit('DISABLE_BACKDROP')"
+      ></span>
       <h1 class="date">
         <span class="lnr lnr-calendar-full"></span>
         -
@@ -15,13 +18,15 @@
       <p class="attendees">
         <span class="lnr lnr-users"></span>
         {{ event.attendees }}
-        <button class="btn-attend">Attend</button>
+        <button class="btn-attend" @click="attendToEvent(event)">Attend</button>
       </p>
 
       <form>
         <h2>Omdöme</h2>
         <input type="text" placeholder="Title" />
-        <textarea placeholder="What did you like/dislike about this event?"></textarea>
+        <textarea
+          placeholder="What did you like/dislike about this event?"
+        ></textarea>
         <button>Send</button>
       </form>
     </section>
@@ -33,6 +38,15 @@ export default {
   name: "Event",
   props: {
     event: Object,
+  },
+  methods: {
+    attendToEvent(event) {
+      if (!this.$store.getters.loggedIn) {
+        alert("Please log in to attend to event");
+        return;
+      }
+      console.log("Event attended: ", event);
+    },
   },
 };
 </script>

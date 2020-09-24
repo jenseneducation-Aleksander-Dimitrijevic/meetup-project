@@ -1,9 +1,15 @@
 <template>
-  <form :class="{ show: this.$store.state.isLoginFormOpen }">
-    <span class="close-btn" @click="$store.commit('TOGGLE_LOGIN_FORM')">&times;</span>
+  <form
+    :class="{ show: this.$store.state.isLoginFormOpen }"
+    @submit.prevent="loginUser"
+  >
+    <span class="close-btn" @click="$store.commit('TOGGLE_LOGIN_FORM')"
+      >&times;</span
+    >
     <h1>Login below</h1>
-    <input type="text" placeholder="E-mail" />
-    <input type="password" placeholder="Password" />
+    <p class="error-message">{{ error }}</p>
+    <input type="text" placeholder="E-mail" id="email" v-model="input.email" />
+    <input type="password" placeholder="Password" v-model="input.password" />
     <button>Login</button>
   </form>
 </template>
@@ -11,6 +17,30 @@
 <script>
 export default {
   name: "LoginForm",
+  data() {
+    return {
+      input: {
+        email: "",
+        password: "",
+      },
+      error: "",
+    };
+  },
+  methods: {
+    loginUser() {
+      this.error = "";
+      if (this.input.email == "" || this.input.password == "") {
+        this.error = "Form field(s) empty";
+        return;
+      }
+      localStorage.setItem("user", JSON.stringify(this.input.email));
+      this.input = "";
+      this.$store.commit("TOGGLE_LOGIN_FORM");
+      setTimeout(() => {
+        location.reload();
+      }, 2000);
+    },
+  },
 };
 </script>
 
@@ -29,6 +59,12 @@ form {
   flex-direction: column;
   justify-content: center;
   transform: translate(100%);
+
+  p.error-message {
+    color: red;
+    margin: 1rem 0;
+    font-size: 0.8rem;
+  }
 
   .close-btn {
     top: 1rem;
