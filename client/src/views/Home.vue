@@ -5,6 +5,9 @@
       <button>Join today!</button>
     </app-header>
     <Events />
+    <transition name="slide-fade" mode="out-in">
+      <router-view />
+    </transition>
   </div>
 </template>
 
@@ -41,6 +44,7 @@ button {
   }
 
   button {
+    transition: 0.3s;
     &:hover {
       background: darken(#d50000, 10%);
     }

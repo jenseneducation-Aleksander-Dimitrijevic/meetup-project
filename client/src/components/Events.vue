@@ -6,6 +6,7 @@
         class="event-item"
         v-for="event in events.events"
         :key="event.id"
+        @click="showEvent(event)"
       >
         <img :src="event.imgUrl" alt="event image" />
         <section class="event-content">
@@ -35,10 +36,14 @@ export default {
     };
   },
   async created() {
-    const RESPONSE = await axios.get(
-      "https://meetup-project.herokuapp.com/events"
-    );
+    const RESPONSE = await axios.get("//localhost:5000/events");
     this.events = RESPONSE.data;
+  },
+  methods: {
+    showEvent(event) {
+      this.$store.commit("TOGGLE_BACKDROP");
+      this.$router.push({ name: "event", params: { id: event.id, event } });
+    },
   },
 };
 </script>
@@ -46,7 +51,7 @@ export default {
 <style lang="scss" scoped>
 .content {
   text-align: left;
-  margin: 4rem auto;
+  margin: 4rem auto 8rem auto;
 
   .grid {
     gap: 2rem 0;
@@ -54,8 +59,9 @@ export default {
     margin: 4rem 0;
 
     .event-item {
+      cursor: pointer;
       border-radius: 5px;
-      border: 1px solid #ccc;
+      border: 1px solid #eee;
 
       img {
         width: 100%;
@@ -103,6 +109,13 @@ export default {
     .grid {
       gap: 2rem;
       grid-template-columns: repeat(3, 1fr);
+
+      .event-item {
+        transition: 0.3s;
+        &:hover {
+          box-shadow: 0 0 25px rgba(#000, 0.2);
+        }
+      }
     }
   }
 }
