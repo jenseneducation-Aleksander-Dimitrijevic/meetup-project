@@ -35,7 +35,7 @@ button {
   cursor: pointer;
   padding: 18px 15px;
   border-radius: 3px;
-  background: #d50000;
+  background: #00796b;
 }
 
 @media screen and (min-width: 1024px) {
@@ -46,7 +46,7 @@ button {
   button {
     transition: 0.3s;
     &:hover {
-      background: darken(#d50000, 10%);
+      background: darken(#00796b, 10%);
     }
   }
 }

@@ -50,13 +50,13 @@ export default {
 
   .btn-user-actions {
     border: none;
-    color: #000;
+    color: #fff;
     transition: 0.3s;
     font-size: 1.2rem;
     border-radius: 3px;
     margin-left: 0.5rem;
     padding: 0.5rem 1rem;
-    background: rgba(#fff, 0.9);
+    background: #00796b;
 
     &.btn-login {
       margin-left: auto;
@@ -73,7 +73,7 @@ export default {
     padding: 0 2rem;
     .btn-user-actions {
       &:hover {
-        opacity: 0.8;
+        background: darken(#00796b, 10%);
       }
     }
   }
