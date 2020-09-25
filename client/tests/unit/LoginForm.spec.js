@@ -23,7 +23,6 @@ describe("LoginForm.vue", () => {
           input: {
             email: "aleksander@gmail.com",
           },
-          error: "",
           isLoggedIn: false,
         };
       },

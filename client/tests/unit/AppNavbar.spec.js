@@ -27,9 +27,6 @@ describe("AppNavbar.vue", () => {
   it("should commit to a mutation and send a payload", async () => {
     const loginButton = wrapper.find(".btn-login");
     await loginButton.trigger("click");
-    expect(mutations.TOGGLE_LOGIN_FORM).toHaveBeenCalledWith(
-      {},
-      { msg: "Mutation payload" }
-    );
+    expect(mutations.TOGGLE_LOGIN_FORM).toHaveBeenCalledWith({}, {});
   });
 });

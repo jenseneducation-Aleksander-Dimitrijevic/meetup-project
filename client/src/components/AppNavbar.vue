@@ -1,15 +1,9 @@
 <template>
   <nav class="app-bar">
-    <button
-      v-if="!$store.getters.loggedIn"
-      class="btn-user-actions"
-      @click="loginUser"
-    >
+    <button v-if="!$store.getters.loggedIn" class="btn-user-actions btn-login" @click="loginUser">
       <span class="lnr lnr-user"></span> Login
     </button>
-    <button v-else class="btn-user-actions" @click="logout">
-      Logout
-    </button>
+    <button v-else class="btn-user-actions" @click="logout">Logout</button>
     <button v-show="$store.getters.loggedIn">Create new event</button>
   </nav>
 </template>
