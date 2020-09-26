@@ -42,9 +42,7 @@
       <ul class="review-container">
         <li
           class="review-item"
-          v-for="(eventReview, idx) in $store.getters.showCurrentReview(
-            event.id
-          )"
+          v-for="(eventReview, idx) in showCurrentReview(event.id)"
           :key="idx"
         >
           <h1>{{ eventReview.review.title }}</h1>
@@ -59,13 +57,14 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 export default {
   name: "Event",
   data() {
     return {
       input: {
-        title: "",
-        message: "",
+        title: null,
+        message: null,
       },
     };
   },
@@ -74,10 +73,10 @@ export default {
   },
   methods: {
     attendToEvent() {
-      // if (!this.$store.getters.loggedIn) {
-      //   alert("Please log in to attend to event");
-      //   return;
-      // }
+      if (!this.$store.getters.loggedIn) {
+        alert("Please log in to attend to event");
+        return;
+      }
       this.$store.commit("SET_EVENT_DATA", this.event);
     },
 
@@ -92,16 +91,14 @@ export default {
         id: this.event.id,
         date: new Date(),
       });
-      this.input = "";
+      this.input = {};
     },
   },
   computed: {
     isAttended() {
       return this.$store.state.eventList.find((e) => e.id === this.event.id);
     },
-  },
-  created() {
-    console.log(this.event);
+    ...mapGetters(["showCurrentReview"]),
   },
 };
 </script>

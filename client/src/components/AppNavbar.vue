@@ -1,5 +1,6 @@
 <template>
   <nav class="app-bar">
+    <h1 v-if="user" class="user-email">Logged in as: {{ user }}</h1>
     <button
       v-if="!$store.getters.loggedIn"
       class="btn-user-actions btn-login"
@@ -28,6 +29,14 @@ export default {
       location.reload();
     },
   },
+  created() {
+    this.user = JSON.parse(localStorage.getItem("user"));
+  },
+  data() {
+    return {
+      user: null,
+    };
+  },
 };
 </script>
 
@@ -44,6 +53,13 @@ export default {
   padding: 0 1rem;
   align-items: center;
   background: rgba(#000, 0.1);
+
+  .user-email {
+    color: #fff;
+    font-weight: 100;
+    font-size: 1rem;
+  }
+
   .btn-content {
     margin-left: auto;
   }

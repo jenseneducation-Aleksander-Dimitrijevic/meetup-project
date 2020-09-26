@@ -32,6 +32,9 @@ export default {
       if (this.input.email == "" || this.input.password == "") {
         this.error = "Form field(s) empty";
         return;
+      } else if (!this.validEmail(this.input.email)) {
+        this.error = "Invalid e-mail";
+        return;
       }
 
       this.$store.commit("SET_LOADING");
@@ -42,6 +45,11 @@ export default {
         location.reload();
         this.$store.commit("SET_LOADING");
       }, 2000);
+    },
+
+    validEmail: function(email) {
+      var regEx = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return regEx.test(email);
     },
   },
 };
