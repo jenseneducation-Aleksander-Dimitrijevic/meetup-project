@@ -11,7 +11,7 @@
       <h1 class="date">
         <span class="lnr lnr-calendar-full"></span>
         -
-        <!-- {{ event.eventDate | moment("dddd, MMMM Do YYYY") }} -->
+        {{ event.eventDate | moment("dddd, MMMM Do YYYY") }}
       </h1>
       <p class="description">{{ event.eventDescription }}</p>
       <p class="attendees">
@@ -49,9 +49,9 @@
         >
           <h1>{{ eventReview.review.title }}</h1>
           <p>{{ eventReview.review.message }}</p>
-          <!-- <span class="review-date">{{
+          <span class="review-date">{{
             eventReview.date | moment("dddd, MMMM Do YYYY, HH:mm:ss")
-          }}</span> -->
+          }}</span>
         </li>
       </ul>
     </section>
