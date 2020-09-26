@@ -1,5 +1,5 @@
 <template>
-  <article class="content">
+  <article class="content" id="events">
     <h1>Events in Stockholm</h1>
     <div class="grid">
       <section
@@ -77,6 +77,10 @@ export default {
         .date {
           color: #999;
           font-size: 1rem;
+
+          span {
+            color: #00796b;
+          }
         }
 
         .title {
@@ -94,6 +98,11 @@ export default {
           color: #999;
           font-size: 1rem;
           margin-top: 1rem;
+
+          span {
+            font-weight: bold;
+            color: #00796b;
+          }
         }
       }
     }

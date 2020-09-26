@@ -11,7 +11,7 @@
       <h1 class="date">
         <span class="lnr lnr-calendar-full"></span>
         -
-        {{ event.eventDate | moment("dddd, MMMM Do YYYY") }}
+        <!-- {{ event.eventDate | moment("dddd, MMMM Do YYYY") }} -->
       </h1>
       <p class="description">{{ event.eventDescription }}</p>
       <p class="attendees">
@@ -24,7 +24,13 @@
 
       <form @submit.prevent="createReview">
         <h2>Omdöme</h2>
-        <input required type="text" placeholder="Title" v-model="input.title" />
+        <input
+          required
+          type="text"
+          placeholder="Title"
+          id="title"
+          v-model="input.title"
+        />
         <textarea
           required
           v-model="input.message"
@@ -43,9 +49,9 @@
         >
           <h1>{{ eventReview.review.title }}</h1>
           <p>{{ eventReview.review.message }}</p>
-          <span class="review-date">{{
+          <!-- <span class="review-date">{{
             eventReview.date | moment("dddd, MMMM Do YYYY, HH:mm:ss")
-          }}</span>
+          }}</span> -->
         </li>
       </ul>
     </section>
@@ -68,16 +74,17 @@ export default {
   },
   methods: {
     attendToEvent() {
-      if (!this.$store.getters.loggedIn) {
-        alert("Please log in to attend to event");
-        return;
-      }
+      // if (!this.$store.getters.loggedIn) {
+      //   alert("Please log in to attend to event");
+      //   return;
+      // }
       this.$store.commit("SET_EVENT_DATA", this.event);
     },
 
     createReview() {
       if (!this.$store.getters.loggedIn) {
         alert("Please log in to attend to event");
+        this.input = "";
         return;
       }
       this.$store.commit("SET_EVENT_REVIEW", {
@@ -92,6 +99,9 @@ export default {
     isAttended() {
       return this.$store.state.eventList.find((e) => e.id === this.event.id);
     },
+  },
+  created() {
+    console.log(this.event);
   },
 };
 </script>
