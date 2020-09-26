@@ -52,7 +52,7 @@ export default {
   position: fixed;
   padding: 0 1rem;
   align-items: center;
-  background: rgba(#000, 0.1);
+  background: rgba(#000, 0.4);
 
   .user-email {
     color: #fff;

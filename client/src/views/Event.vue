@@ -16,7 +16,7 @@
       <p class="description">{{ event.eventDescription }}</p>
       <p class="attendees">
         <span class="lnr lnr-users"></span>
-        {{ event.attendees }}
+        {{ isAttended ? event.attendees + 1 : event.attendees }}
         <button class="btn-attend" @click="attendToEvent">
           {{ isAttended ? "Leave" : "Attend" }}
         </button>
