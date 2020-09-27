@@ -18,17 +18,17 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { mapGetters, mapMutations } from "vuex";
 export default {
   name: "AppNavbar",
   methods: {
-    loginUser() {
-      this.$store.commit("TOGGLE_LOGIN_FORM");
-    },
     logout() {
       localStorage.removeItem("user");
       location.reload();
     },
+    ...mapMutations({
+      loginUser: "TOGGLE_LOGIN_FORM",
+    }),
   },
   created() {
     this.user = JSON.parse(localStorage.getItem("user"));
