@@ -6,6 +6,8 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
+    eventList: [],
+    eventReviews: [],
     isLoading: false,
     isBackdropOpen: false,
     isLoginFormOpen: false,
@@ -24,6 +26,18 @@ export default new Vuex.Store({
     SET_LOADING(state) {
       state.isLoading = !state.isLoading;
     },
+    SET_EVENT_DATA(state, event) {
+      const eventExists = state.eventList.some((item) => item.id === event.id);
+      if (eventExists) {
+        state.eventList = state.eventList.filter((e) => e.id !== event.id);
+      } else {
+        state.eventList.push(event);
+      }
+    },
+    SET_EVENT_REVIEW(state, eventReview) {
+      state.eventReviews.push(eventReview);
+      console.log(state.eventReviews);
+    },
   },
   actions: {},
   modules: {},
@@ -31,6 +45,10 @@ export default new Vuex.Store({
     loggedIn() {
       const isLoggedIn = JSON.parse(localStorage.getItem("user"));
       return !!isLoggedIn;
+    },
+
+    showCurrentReview: (state) => (id) => {
+      return state.eventReviews.filter((review) => review.id == id);
     },
   },
 });
