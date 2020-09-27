@@ -36,7 +36,7 @@ export default {
     };
   },
   async created() {
-    const RESPONSE = await axios.get("//localhost:5000/events");
+    const RESPONSE = await axios.get("/events");
     this.events = RESPONSE.data;
   },
   methods: {

@@ -47,7 +47,7 @@ export default {
       }, 2000);
     },
 
-    validEmail: function(email) {
+    validEmail: function (email) {
       var regEx = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
       return regEx.test(email);
     },
@@ -95,6 +95,7 @@ form {
 
   &.show {
     transform: translate(0);
+    box-shadow: 0 0 10px rgba(#000, 0.3);
   }
 }
 
@@ -104,7 +105,6 @@ form {
     width: 300px;
     height: 500px;
     border-radius: 5px 0 0 5px;
-    box-shadow: 0 0 10px rgba(#000, 0.3);
 
     button {
       width: 100px;
