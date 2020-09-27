@@ -36,17 +36,17 @@ describe("LoginForm.vue", () => {
 
   test("should return value inserted in input", () => {
     inputEmail.setValue("aleksander@gmail.com");
-    expect(inputEmail.element.value).toMatch("aleksander@gmail.com");
+    expect(inputEmail.element.value).toBe("aleksander@gmail.com");
   });
 
-  test("should check if input value is stored in data property", () => {
+  test("should check if input value is stored in data property", async () => {
     inputEmail.setValue("aleksander@gmail.com");
-    expect(wrapper.vm.input.email).toMatch("aleksander@gmail.com");
+    expect(wrapper.vm.input.email).toBe("aleksander@gmail.com");
   });
 
   test("should check if input is empty and display error message", async () => {
     await wrapper.trigger("submit");
-    expect(wrapper.vm.error).toMatch("Form field(s) empty");
+    expect(wrapper.vm.error).toBe("Form field(s) empty");
   });
 
   test("should check if user has submitted the form", async () => {
