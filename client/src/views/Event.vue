@@ -23,7 +23,7 @@
       </p>
 
       <form @submit.prevent="createReview">
-        <h2>Omdöme</h2>
+        <h2>Review</h2>
         <input
           required
           type="text"

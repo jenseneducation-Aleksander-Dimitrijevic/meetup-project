@@ -2,7 +2,7 @@
   <nav class="app-bar">
     <h1 v-if="user" class="user-email">Logged in as: {{ user }}</h1>
     <button
-      v-if="!$store.getters.loggedIn"
+      v-if="!loggedIn"
       class="btn-user-actions btn-login"
       @click="loginUser"
     >
@@ -10,7 +10,7 @@
     </button>
     <div class="btn-content" v-else>
       <button class="btn-user-actions" @click="logout">Logout</button>
-      <button v-show="$store.getters.loggedIn" class="btn-user-actions">
+      <button v-show="loggedIn" class="btn-user-actions">
         Create event
       </button>
     </div>
@@ -18,6 +18,7 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 export default {
   name: "AppNavbar",
   methods: {
@@ -36,6 +37,9 @@ export default {
     return {
       user: null,
     };
+  },
+  computed: {
+    ...mapGetters(["loggedIn"]),
   },
 };
 </script>
