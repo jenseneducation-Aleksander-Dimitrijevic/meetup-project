@@ -20,7 +20,7 @@ function generateEvents() {
     });
   }
 
-  return { events };
+  return events;
 }
 
 module.exports = { generateEvents };

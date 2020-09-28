@@ -1,4 +1,5 @@
 export const state = {
+  addEvent: [],
   eventList: [],
   eventReviews: [],
   isLoading: false,

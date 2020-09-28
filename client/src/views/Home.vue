@@ -14,6 +14,7 @@
       >
     </app-header>
     <Events />
+    <add-event />
     <transition name="slide-fade" mode="out-in">
       <router-view />
     </transition>
@@ -23,11 +24,13 @@
 <script>
 import AppHeader from "@/components/AppHeader.vue";
 import Events from "@/components/Events.vue";
+import AddEvent from "@/components/AddEvent.vue";
 export default {
   name: "Home",
   components: {
     AppHeader,
     Events,
+    AddEvent,
   },
 };
 </script>

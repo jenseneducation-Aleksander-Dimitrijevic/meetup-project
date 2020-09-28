@@ -32,9 +32,11 @@ export default {
     createEvent() {
       this.$store.commit("SET_LOADING");
       setTimeout(() => {
-        this.$router.push({
-          name: "createEvent",
-        });
+        this.$router
+          .push({
+            name: "createEvent",
+          })
+          .catch(() => {});
         this.$store.commit("SET_LOADING");
         this.$store.commit("TOGGLE_BACKDROP");
       }, 500);

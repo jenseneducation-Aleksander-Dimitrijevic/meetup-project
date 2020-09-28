@@ -24,4 +24,8 @@ export const mutations = {
   SET_EVENT_REVIEW(state, eventReview) {
     state.eventReviews.push(eventReview);
   },
+  CREATE_EVENT(state, newEvent) {
+    state.addEvent.push(newEvent);
+    console.log(state.addEvent);
+  },
 };

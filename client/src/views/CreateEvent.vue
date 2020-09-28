@@ -4,7 +4,7 @@
       <img :src="imgUrl" alt="event image" />
     </label>
     <input type="file" accept="image/*" id="file-input" @change="chooseImage" />
-    <form>
+    <form @submit.prevent="createEvent">
       <h1>Create your event</h1>
       <input
         type="text"
@@ -16,7 +16,7 @@
         v-model="input.description"
         placeholder="Enter a description"
       ></textarea>
-
+      <input type="date" id="date" v-model="input.date" />
       <button>Create</button>
     </form>
   </div>
@@ -31,6 +31,7 @@ export default {
         title: "",
         description: "",
         date: "",
+        attendees: 0,
       },
       imgUrl: require("@/assets/placeholder.png"),
     };
@@ -38,7 +39,20 @@ export default {
 
   methods: {
     chooseImage(e) {
-      this.imgUrl = e.target.files[0].name;
+      const file = e.target.files[0];
+      this.imgUrl = URL.createObjectURL(file);
+    },
+
+    createEvent() {
+      this.$store.commit("CREATE_EVENT", {
+        eventTitle: this.input.title,
+        eventDate: this.input.date,
+        eventDescription: this.input.description,
+        attendees: this.input.attendees,
+        imgUrl: this.imgUrl,
+      });
+      this.$router.go(-1);
+      this.$store.commit("TOGGLE_BACKDROP");
     },
   },
 };
