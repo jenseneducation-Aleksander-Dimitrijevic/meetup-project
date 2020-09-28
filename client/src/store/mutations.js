@@ -26,5 +26,9 @@ export const mutations = {
   },
   CREATE_EVENT(state, newEvent) {
     state.addEvent.push(newEvent);
+    localStorage.setItem("newEvents", JSON.stringify(state.addEvent));
+  },
+  ADD_NEW_EVENTS(state, newEvents) {
+    state.addEvent = newEvents;
   },
 };

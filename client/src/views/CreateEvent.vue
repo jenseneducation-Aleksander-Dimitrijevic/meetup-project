@@ -52,7 +52,7 @@ export default {
         attendees: this.input.attendees,
         imgUrl: this.imgUrl,
       });
-      this.$router.go(-1);
+      this.$router.push({ name: "Home" });
       this.$store.commit("TOGGLE_BACKDROP");
     },
   },

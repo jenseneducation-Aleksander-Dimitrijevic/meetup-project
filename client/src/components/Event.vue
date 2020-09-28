@@ -35,9 +35,6 @@ export default {
       this.$router.push({ name: "event", params: { id: event.id, event } });
     },
   },
-  created() {
-    console.log(this.events);
-  },
 };
 </script>
 

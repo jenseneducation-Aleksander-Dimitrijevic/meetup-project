@@ -15,5 +15,11 @@ Vue.config.productionTip = false;
 new Vue({
   router,
   store,
+  created() {
+    const newEvents = JSON.parse(localStorage.getItem("newEvents"));
+    if (newEvents) {
+      store.commit("ADD_NEW_EVENTS", newEvents);
+    }
+  },
   render: (h) => h(App),
 }).$mount("#app");

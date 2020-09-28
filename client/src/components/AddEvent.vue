@@ -10,10 +10,10 @@ import { mapState } from "vuex";
 import Event from "@/components/Event.vue";
 export default {
   name: "AddEvent",
-  computed: { ...mapState(["addEvent"]) },
   components: {
     Event,
   },
+  computed: { ...mapState(["addEvent"]) },
 };
 </script>
 
