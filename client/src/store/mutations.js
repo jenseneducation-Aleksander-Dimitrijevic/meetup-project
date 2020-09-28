@@ -26,6 +26,5 @@ export const mutations = {
   },
   CREATE_EVENT(state, newEvent) {
     state.addEvent.push(newEvent);
-    console.log(state.addEvent);
   },
 };

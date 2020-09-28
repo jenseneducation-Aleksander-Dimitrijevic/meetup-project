@@ -45,6 +45,7 @@ export default {
 
     createEvent() {
       this.$store.commit("CREATE_EVENT", {
+        id: Date.now(),
         eventTitle: this.input.title,
         eventDate: this.input.date,
         eventDescription: this.input.description,
