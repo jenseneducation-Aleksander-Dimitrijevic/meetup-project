@@ -39,7 +39,7 @@
         <button>Send</button>
       </form>
 
-      <ul class="review-container">
+      <ul class="review-container" ref="review">
         <li
           class="review-item"
           v-for="(eventReview, idx) in showCurrentReview(event.id)"
@@ -92,6 +92,9 @@ export default {
         date: new Date(),
       });
       this.input = {};
+      this.$nextTick(() => {
+        this.$refs.review.scrollIntoView();
+      });
     },
   },
   computed: {
@@ -163,32 +166,6 @@ export default {
       }
     }
 
-    form {
-      width: 100%;
-      &::before {
-        width: 100%;
-        height: 1px;
-        content: "";
-        display: block;
-        background: #ddd;
-        margin-bottom: 2rem;
-      }
-
-      input,
-      textarea {
-        width: 100%;
-        margin: 1rem 0;
-        padding: 10px 5px;
-        border-radius: 3px;
-        border: 1px solid #eee;
-      }
-
-      textarea {
-        height: 300px;
-        resize: none;
-      }
-    }
-
     .review-container {
       list-style: none;
       &::before {
@@ -197,7 +174,7 @@ export default {
         height: 1px;
         display: block;
         margin-top: 3rem;
-        background: #ccc;
+        background: #eee;
         margin-bottom: 2rem;
       }
 
@@ -205,10 +182,12 @@ export default {
         padding: 10px;
         margin: 1rem 0;
         font-weight: 100;
-        background: #ddd;
+        background: #fff;
+        border-radius: 5px;
+        border: 1px solid #eee;
 
         h1 {
-          font-size: 1rem;
+          font-size: 1.2rem;
         }
 
         p {
@@ -219,7 +198,7 @@ export default {
 
       .review-date {
         font-weight: 100;
-        font-size: 0.8rem;
+        font-size: 0.7rem;
       }
     }
   }

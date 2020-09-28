@@ -10,7 +10,7 @@
     </button>
     <div class="btn-content" v-else>
       <button class="btn-user-actions" @click="logout">Logout</button>
-      <button v-show="loggedIn" class="btn-user-actions">
+      <button v-show="loggedIn" class="btn-user-actions" @click="createEvent">
         Create event
       </button>
     </div>
@@ -29,6 +29,16 @@ export default {
     ...mapMutations({
       loginUser: "TOGGLE_LOGIN_FORM",
     }),
+    createEvent() {
+      this.$store.commit("SET_LOADING");
+      setTimeout(() => {
+        this.$router.push({
+          name: "createEvent",
+        });
+        this.$store.commit("SET_LOADING");
+        this.$store.commit("TOGGLE_BACKDROP");
+      }, 500);
+    },
   },
   created() {
     this.user = JSON.parse(localStorage.getItem("user"));

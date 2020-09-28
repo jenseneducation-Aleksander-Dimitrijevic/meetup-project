@@ -71,6 +71,10 @@ form {
   justify-content: center;
   transform: translate(100%);
 
+  &::before {
+    display: none;
+  }
+
   p.error-message {
     color: red;
     margin: 1rem 0;
