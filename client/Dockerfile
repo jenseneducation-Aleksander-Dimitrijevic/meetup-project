@@ -1,4 +1,4 @@
-FROM node:lts-alpine
+FROM node:10
 
 # make the 'app' folder the current working directory
 WORKDIR /usr/src/app/client

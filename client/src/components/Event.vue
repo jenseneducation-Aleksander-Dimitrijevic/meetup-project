@@ -32,7 +32,9 @@ export default {
   methods: {
     showEvent(event) {
       this.$store.commit("TOGGLE_BACKDROP");
-      this.$router.push({ name: "event", params: { id: event.id, event } });
+      this.$router
+        .push({ name: "event", params: { id: event.id, event } })
+        .catch(() => {});
     },
   },
 };
