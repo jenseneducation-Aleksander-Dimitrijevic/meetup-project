@@ -2,6 +2,10 @@ const path = require("path");
 module.exports = {
   outputDir: path.resolve(path.join(__dirname, "../api/public")),
   devServer: {
-    proxy: "http://localhost:5000",
+    proxy: {
+      "^/api": {
+        target: "http://nodejs-server:5000",
+      },
+    },
   },
 };

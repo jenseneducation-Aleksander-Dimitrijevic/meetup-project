@@ -9,7 +9,7 @@ const fakeRouter = require("./routes/events");
 app.use(express.json());
 app.use(cors());
 
-app.use("/events", fakeRouter);
+app.use("/api/events", fakeRouter);
 
 app.use(express.static(path.join(__dirname, "/public")));
 app.get("/", (req, res) =>
