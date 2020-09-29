@@ -16,7 +16,7 @@ export default {
     };
   },
   async created() {
-    const RESPONSE = await axios.get("/events");
+    const RESPONSE = await axios.get("/api/events");
     this.events = RESPONSE.data;
   },
 
