@@ -11,9 +11,11 @@ app.use(cors());
 
 app.use("/api/events", fakeRouter);
 
-app.use(express.static(path.join(__dirname, "/public")));
-app.get("/", (req, res) =>
-  res.sendFile(path.join(__dirname, "/public", "index.html"))
-);
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "/public")));
+  app.get("/", (req, res) =>
+    res.sendFile(path.join(__dirname, "/public", "index.html"))
+  );
+}
 
 app.listen(PORT, () => console.log(`Server up and running on port: ${PORT}`));

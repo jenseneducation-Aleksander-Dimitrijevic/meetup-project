@@ -2,6 +2,7 @@ version: "3"
 services:
   nodejs-server:
     container_name: nodejs_api
+    image: nodejs-api
     build:
       context: ./api
       dockerfile: Dockerfile
