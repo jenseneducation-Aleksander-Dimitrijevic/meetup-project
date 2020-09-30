@@ -17,7 +17,13 @@
       <p class="attendees">
         <span class="lnr lnr-users"></span>
         {{ isAttended ? event.attendees + 1 : event.attendees }}
-        <button class="btn-attend" @click="attendToEvent">
+        <button
+          class="btn-attend"
+          @click="attendToEvent"
+          :style="[
+            isAttended ? { background: 'red' } : { background: '#00796b' },
+          ]"
+        >
           {{ isAttended ? "Leave" : "Attend" }}
         </button>
       </p>

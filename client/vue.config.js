@@ -5,7 +5,6 @@ module.exports = {
     proxy: {
       "^/api": {
         target: "http://nodejs-server:5000",
-        changeOrigin: true,
       },
     },
   },

@@ -13,8 +13,8 @@
         >Join today!</a
       >
     </app-header>
-    <Events />
     <add-event />
+    <Events />
     <transition name="slide-fade" mode="out-in">
       <router-view />
     </transition>
