@@ -20,7 +20,7 @@ export default {
     border-radius: 50%;
     border: 10px solid #eee;
     animation: spin 0.9s infinite;
-    border-top: 10px solid #d50000;
+    border-top: 10px solid #00796b;
 
     @keyframes spin {
       from {

@@ -17,7 +17,8 @@
     "server": "nodemon app.js",
     "start": "node app.js",
     "client": "npm run serve --prefix ./../client",
-    "dev": "concurrently \"npm run client\" \" npm run server\" "
+    "dev": "concurrently \"npm run client\" \" npm run server\" ",
+    "postinstall": "(cd ./../client && npm install);"
   },
   "author": "Aleksander Dimitrijevic",
   "license": "ISC"

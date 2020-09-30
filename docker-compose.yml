@@ -1,28 +1,22 @@
 version: "3"
 services:
-  client:
-    container_name: web_client
-    build:
-      context: ./client
-      dockerfile: Dockerfile
-    image: meetup/client
-    ports:
-      - "8080:8080"
-    expose:
-      - "8080"
-    volumes:
-      - ./client
-    links:
-      - api
-  api:
-    container_name: web_api
+  nodejs-server:
+    container_name: nodejs_api
     build:
       context: ./api
       dockerfile: Dockerfile
-    image: meetup/api
     ports:
       - "5000:5000"
-    expose:
-      - "5000"
     volumes:
-      - ./api
+      - ./api:/usr/src/app/api
+        - /usr/src/app/api/node_modules
+  vue-ui:
+    container_name: vue_client
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./client:/usr/src/app/client
+        - /usr/src/app/client/node_modules
